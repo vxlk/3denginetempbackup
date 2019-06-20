@@ -1,6 +1,7 @@
 #include "Window.h"
 #include "Rendering/glRenderer.h"
 
+
 glWindow::errorMessage glWindow::init()
 {
 	// Initialise GLFW
@@ -26,8 +27,10 @@ glWindow::errorMessage glWindow::init()
 	glfwMakeContextCurrent(m_glWindow.get());
 
 	// Initialize GLEW
+	glewExperimental = GL_TRUE; // Needed for core profile
 	if (glewInit() != GLEW_OK) {
 		glfwTerminate();
+		fprintf(stderr, "%s here\n", glewGetErrorString(glewInit()));
 		return glWindow::errorMessage::glewInitFailure;
 	}
 
@@ -51,6 +54,10 @@ glWindow::errorMessage glWindow::init()
 
 	// Cull triangles which normal is not towards the camera
 	glEnable(GL_CULL_FACE);
+	
+	this->m_renderContext.init();
+
+	return glWindow::errorMessage::NoError;
 }
 
 glWindow::glWindow()
@@ -69,6 +76,7 @@ glWindow::glWindow()
 													    break;
 		case glWindow::errorMessage::glfwInitFailure:	fprintf(stderr, "glfw not initialized");
 														break;
+		case glWindow::errorMessage::NoError:			break;
 		default:										break;
 	}
 }
@@ -82,13 +90,14 @@ glWindow::glWindow(const unsigned int& width, const unsigned int& height, const 
 
 	switch (init())
 	{
-	case glWindow::errorMessage::glfwWindowFailure: fprintf(stderr, "glfw window not initialized");
-													break;
-	case glWindow::errorMessage::glewInitFailure:	fprintf(stderr, "glew not initialized");
-													break;
-	case glWindow::errorMessage::glfwInitFailure:	fprintf(stderr, "glfw not initialized");
-													break;
-	default:										break;
+		case glWindow::errorMessage::glfwWindowFailure: fprintf(stderr, "glfw window not initialized");
+														break;
+		case glWindow::errorMessage::glewInitFailure:	fprintf(stderr, "glew not initialized");
+														break;
+		case glWindow::errorMessage::glfwInitFailure:	fprintf(stderr, "glfw not initialized");
+														break;
+		case glWindow::errorMessage::NoError:			break;
+		default:										break;
 	}
 }
 

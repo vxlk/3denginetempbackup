@@ -28,6 +28,8 @@ using Vector2 = vec2;
 
 	// Include GLFW
 	#include "GLFW/glfw3.h"
+	
+	static constexpr GLuint INVALID_GLUINT = 999999;
 
 	#ifndef RENDERING_PLATFORM
 	#define RENDERING_PLATFORM
