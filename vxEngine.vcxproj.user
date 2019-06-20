@@ -16,7 +16,7 @@
     <LocalDebuggerCommand>C:\Users\small\Desktop\vxEngine\build\Release\vxEngine.exe</LocalDebuggerCommand>
     <LocalDebuggerCommandArguments>
     </LocalDebuggerCommandArguments>
-    <LocalDebuggerWorkingDirectory>C:/Users/small/Desktop/vxEngine/vxEngine/</LocalDebuggerWorkingDirectory>
+    <LocalDebuggerWorkingDirectory>C:/Users/small/Desktop/vxEngine/</LocalDebuggerWorkingDirectory>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">
     <LocalDebuggerEnvironment>
@@ -25,7 +25,7 @@
     <LocalDebuggerCommand>C:\Users\small\Desktop\vxEngine\build\MinSizeRel\vxEngine.exe</LocalDebuggerCommand>
     <LocalDebuggerCommandArguments>
     </LocalDebuggerCommandArguments>
-    <LocalDebuggerWorkingDirectory>C:/Users/small/Desktop/vxEngine/vxEngine/</LocalDebuggerWorkingDirectory>
+    <LocalDebuggerWorkingDirectory>C:/Users/small/Desktop/vxEngine/</LocalDebuggerWorkingDirectory>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">
     <LocalDebuggerEnvironment>
@@ -34,6 +34,6 @@
     <LocalDebuggerCommand>C:\Users\small\Desktop\vxEngine\build\RelWithDebInfo\vxEngine.exe</LocalDebuggerCommand>
     <LocalDebuggerCommandArguments>
     </LocalDebuggerCommandArguments>
-    <LocalDebuggerWorkingDirectory>C:/Users/small/Desktop/vxEngine/vxEngine/</LocalDebuggerWorkingDirectory>
+    <LocalDebuggerWorkingDirectory>C:/Users/small/Desktop/vxEngine/</LocalDebuggerWorkingDirectory>
   </PropertyGroup>
 </Project>
